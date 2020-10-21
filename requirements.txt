@@ -1,3 +1,4 @@
 python-firebase
+requests
 PyAutoGUI
 base64
