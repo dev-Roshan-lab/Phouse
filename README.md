@@ -17,7 +17,7 @@ what if you can control your PC with your Phone ? here it is Phouse (Phone-Mouse
 ## What Next ?
 - Make a One faster 
 - I actually thought of making one which transmits data Over Bluetooth But my poor PC dosen't has One. So, Make one with Bluetooth
-
+- Enable Mouse Clicking actions
 ## Added
 :large_blue_diamond: Streaming PC/Lappy Screent to Phone using Firebase, now you know where to take the mouse and click
 
