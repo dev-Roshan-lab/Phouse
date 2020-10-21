@@ -1,31 +1,30 @@
-from firebase import firebase
-import pyautogui as pg
-import io
-from PIL import ImageGrab
-import base64
-import cv2
-import json
-firebase = firebase.FirebaseApplication("https://server-65459.firebaseio.com/", None)
+from firebase import firebase #connting to db
+import pyautogui as pg #for controlling
+import io # used for converting screenshots to json serializable string
+from PIL import ImageGrab #takes the screenshot
+import base64 # encoding screeshots to base64
+firebase = firebase.FirebaseApplication("__FB REALTIME DATABASE URL__", None) # Connect to the db
 
 
-pg.FAILSAFE = True
-#while True:
+pg.FAILSAFE = True # Obviously you dont want your Device to GO mad
 while True:
+    # Take Screenshot and convert them to json serializable string so that you can update in the Realtime DB
     buffer = io.BytesIO()
     img = ImageGrab.grab()
     img.save(buffer, format='PNG')
     img.close()
-    
+    # encode the base64 string
     b64_str = base64.b64encode(buffer.getvalue())
-    #print(b64_str)
-    #b64_str[2:]
-    #print(b64_str)
+    # Decode to make it json serializable
     image = b64_str.decode()
+    # put() to update 
     firebase.put('/airmouse/data','image', image)
     print("Updated")
+    # get() to revieve the data from db
     data = firebase.get('/airmouse/data', '')
+    # save the key "dir" data for moving the mouse
     mouse = data["dir"]
-    
+    #move the mouse based on how the user rotates the phone 
     if mouse == "topleft":
         #print("Left")
         pg.moveRel(-10, -10)
@@ -38,5 +37,5 @@ while True:
         pg.moveRel(10, -10)
     else :
         print("Null")
-    
+    # First Cycle Completed
     print("done")  
