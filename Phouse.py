@@ -1,4 +1,4 @@
-from firebase import firebase #connting to db
+from firebase import firebase # firebase library
 import pyautogui as pg #for controlling
 import io # used for converting screenshots to json serializable string
 from PIL import ImageGrab #takes the screenshot
@@ -24,12 +24,11 @@ while True:
     data = firebase.get('/airmouse/data', '')
     # save the key "dir" data for moving the mouse
     mouse = data["dir"]
-    #move the mouse based on how the user rotates the phone 
+    # move the mouse based on how the user rotates the phone 
+    # the coordinates are obviously incorrect wrt to string "mouse", it is wer to the mobile !
     if mouse == "topleft":
-        #print("Left")
         pg.moveRel(-10, -10)
     elif mouse == "downright":
-        #print("Right")
         pg.moveRel(10, 10)
     elif mouse == "downleft":
         pg.moveRel(-10, 10)
