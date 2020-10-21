@@ -1,12 +1,18 @@
 # Phouse
 what if you can control your PC with your Phone ? here it is Phouse (Phone-Mouse) 
 
-![alt text](https://github.com/dev-Roshan-lab/Phouse/blob/main/img1.JPG)
+![alt text](https://github.com/dev-Roshan-lab/Phouse/blob/main/FBDBSCSHT.png)
+
+## PC View
+![alt text](https://github.com/dev-Roshan-lab/Phouse/blob/main/Phouse%20PC%20vid.gif)
+
+## Mobile View
+![alt text](https://github.com/dev-Roshan-lab/Phouse/blob/main/Phouse%20Mobile%20vid.gif)
 
 ## how it works
-- The APP reads your Gyroscope and And based on some Poor if-else Condition it Updates the key **z** in the databse
+- The APP reads your Gyroscope and And based on some Poor if-else Condition it Updates the key **dir** in the databse
 - The Python app here reads the same and Uses PyAutoGUI to move the Mouse 
-- Coolest Thing here is You can Modify the Line number 11 to control your device Mouse anywhere in the world where there is good internet connection
+- Coolest Thing here is you can control your device Mouse anywhere in the world where there is good internet connection
 
 ## What Next ?
 - Make a One faster 
@@ -29,4 +35,5 @@ what if you can control your PC with your Phone ? here it is Phouse (Phone-Mouse
 - Twist your Phone in Top Right, Top left, Down Right or Down left to see the Cursor Move
 
 #### *make sure not leave Phouse.apk opened for long time if so you got a new iron Box !!!*
+#### Contibutions Welcomed !!!
 ### Made With Python 3.6
